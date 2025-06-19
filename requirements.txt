@@ -1,0 +1,7 @@
+streamlit
+groq
+PyPDF2
+pdfplumber
+tiktoken
+faiss-cpu
+python-dotenv 
