@@ -1,56 +1,72 @@
 # SmartDoc Assistant
 
-An AI-powered assistant for research summarization and document reasoning. Upload a PDF or TXT, get a concise summary, ask questions, or challenge yourself with logic-based questions—all with document-grounded answers and justifications.
+## Project Overview
+SmartDoc Assistant is an AI-powered web application designed to help users quickly understand and reason through large documents such as research papers, legal files, or technical manuals. By leveraging advanced language models, it enables users to upload PDF or TXT files, receive concise summaries, ask free-form questions, and challenge themselves with logic-based questions—all with document-grounded answers and justifications. The app features a modern, professional UI for a seamless and engaging user experience.
 
 ## Features
 - **Document Upload:** PDF/TXT support
-- **Auto Summary:** ≤150 words
+- **Auto Summary:** 130–150 word summary
 - **Ask Anything:** Contextual Q&A with references
 - **Challenge Me:** Logic-based questions, answer evaluation, and feedback
 - **Memory:** Follow-up questions with context
 - **Answer Highlighting:** Shows supporting document snippets
 - **Modern UI:** Beautiful background, custom colors, and improved UX
 
+## Demo
+![Demo Screenshot](demo_screenshot.png)
+<!-- Or add a GIF: ![Demo GIF](demo.gif) -->
+
+**[Watch the demo video](https://youtu.be/ZX482LUv2CQ)**
+
 ## Setup Instructions
-1. Clone the repo:
-   ```bash
-   git clone <your-repo-url>
-   cd SmartDoc Assistant
-   ```
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Set your Groq API key in a `.env` file:
-   ```env
-   GROQ_API_KEY=your-groq-api-key-here
-   ```
-   - Get your key from [Groq Console](https://console.groq.com/)
-4. Run the app:
-   ```bash
-   streamlit run app.py
-   ```
+**Requirements:**
+- Python 3.9+
+- [Groq API key](https://console.groq.com/)
 
-## Architecture / Reasoning Flow
-- **Frontend:** Streamlit for UI, file upload, and interaction modes
-- **Backend/Core Logic:** Python modules for parsing, summarization, Q&A, challenge, memory, and highlighting
-- **LLM:** Groq API (Llama 3) for summarization, Q&A, and logic question generation
-- **Memory:** In-memory chat history for contextual follow-ups
-- **Highlighting:** Snippet extraction and display for answer justification
-- **Modern UI:** Custom CSS for background and color scheme
+**Install dependencies:**
+```bash
+pip install -r requirements.txt
+```
 
-## Usage
-1. Upload a PDF or TXT document.
-2. View the auto-generated summary.
-3. Choose "Ask Anything" to ask questions, or "Challenge Me" for logic-based questions.
-4. Get answers with references and highlighted supporting text.
-5. Follow up with more questions—context is preserved!
+**Set your Groq API key in a `.env` file:**
+```env
+GROQ_API_KEY=your-groq-api-key-here
+```
 
----
+**Run the app:**
+```bash
+streamlit run app.py
+```
 
-**Demo:** https://youtu.be/ZX482LUv2CQ
+## Usage Examples
+**Upload a document:**
+- Use the web UI to drag and drop a PDF or TXT file.
 
----
+**Ask Anything:**
+- Type a question in the "Ask Anything" box and get a contextual answer with a supporting snippet.
+
+**Challenge Me:**
+- Switch to "Challenge Me" mode to answer logic-based questions generated from your document. Get instant feedback and justifications.
+
+**(Optional) API Example:**
+If you want to call the backend logic from Python:
+```python
+from utils.summarizer import summarize_text
+summary = summarize_text(open('yourfile.txt').read())
+print(summary)
+```
+
+## Architecture Diagram
+```
++-------------------+      +-------------------+      +-------------------+
+|   Streamlit UI    | <--> |   Python Backend  | <--> |   Groq LLM API    |
+| (Frontend + UX)   |      | (Parsing, Logic)  |      | (Llama 3 Model)   |
++-------------------+      +-------------------+      +-------------------+
+        |                        |                        |
+        |----> File Upload ----->|                        |
+        |<--- Summary/Q&A/------>|                        |
+        |     Challenge          |                        |
+```
 
 ## License
 MIT 
