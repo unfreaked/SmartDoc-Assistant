@@ -12,9 +12,6 @@ SmartDoc Assistant is an AI-powered web application designed to help users quick
 - **Answer Highlighting:** Shows supporting document snippets
 - **Modern UI:** Beautiful background, custom colors, and improved UX
 
-## Demo
-![Demo Screenshot](demo_screenshot.png)
-<!-- Or add a GIF: ![Demo GIF](demo.gif) -->
 
 **[Watch the demo video](https://youtu.be/ZX482LUv2CQ)**
 
